@@ -25,6 +25,9 @@
                         <SortedAscendingHeaderStyle BackColor="#AF0101" />
                         <SortedDescendingCellStyle BackColor="#F6F0C0" />
                         <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                        <EmptyDataTemplate>
+                            <div align="center">No Orders yet</div>
+                        </EmptyDataTemplate>
                     </asp:GridView>
                 
                 </div>
