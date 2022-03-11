@@ -92,23 +92,26 @@ public partial class AddProduct : System.Web.UI.Page
         }
     }
 
-    protected void deleteProduct(object sender, EventArgs e)
+    protected void deleteProduct(string productId)
 {
-        using (SqlConnection con = new SqlConnection(CS))
-        {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("sp_DeleteProduct", con);
-                    int PID = Convert.ToInt32(ProductId.Text);
-            SqlCommand cmd2 = new SqlCommand("DELETE FROM tblProductImages WHERE PID=@PID;", con);
-                    cmd2.Parameters.AddWithValue("@PID", Convert.ToInt32(PID));
-                    cmd2.ExecuteNonQuery();
-
-            SqlCommand cmd3 = new SqlCommand("DELETE FROM tblProduct WHERE PID=@PID;", con);
-                    cmd3.Parameters.AddWithValue("@PID", Convert.ToInt32(PID));
-                    cmd3.ExecuteNonQuery();
-        }
+            SqlConnection conn = new SqlConnection(CS);
+            string sql = "DELETE FROM tblProductImages WHERE PID=" + productId + ";";
+            string sql1 = "DELETE FROM tblProductSizeQuantity WHERE PID=" + productId + ";";
+            string sql2 = "DELETE FROM tblProducts WHERE PID=" + productId + ";";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlCommand cmd1 = new SqlCommand(sql1, conn);
+            SqlCommand cmd2 = new SqlCommand(sql2, conn);
+            cmd.ExecuteNonQuery();
+            cmd1.ExecuteNonQuery();
+            cmd2.ExecuteNonQuery();
+            conn.Close();
+            conn.Dispose();
     }
-    
+    protected void refreshTables(object sender, EventArgs e)
+    {
+        BindGridview1();
+    }
 private void MsgBox(string sMessage)    
     {    
         string msg = "<script language=\"javascript\">";    
@@ -356,32 +359,17 @@ private void MsgBox(string sMessage)
             ddlGender.Enabled = false ;
         }
     }
-protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
+protected void RowEditing(object sender, GridViewEditEventArgs e)
 {
-    if (e.Row.RowType == DataControlRowType.DataRow)
-    {
-        string item = e.Row.Cells[0].Text;
-        foreach (Button button in e.Row.Cells[2].Controls.OfType<Button>())
-        {
-            if (button.CommandName == "Delete")
-            {
-                button.Attributes["onclick"] = "if(!confirm('Do you want to delete " + item + "?')){ return false; };";
-            }
-        }
-    }
+    MsgBox("'C'");
 }
 protected void RowDeleting(object sender, GridViewDeleteEventArgs e)
 {
     int index = Convert.ToInt32(e.RowIndex);
     DataTable dt = ViewState["dt"] as DataTable;
-    dt.Rows[index].Delete();
     ViewState["dt"] = dt;
-    BindGrid();
-}
-protected void BindGrid()
-{
-    GridView1.DataSource = ViewState["dt"] as DataTable;
-    GridView1.DataBind();
+        deleteProduct(dt.Rows[index][0].ToString());
+    BindGridview1();
 }
     private void BindGridview1()
     {
