@@ -37,8 +37,8 @@
           <div class="thumbnail">              
               <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("ImageName") %><%# Eval("Extention") %>" alt="<%# Eval("ImageName") %>"/>
               <div class="caption"> 
-                   <div class="probrand"><%# Eval ("BrandName") %>  </div>
-                   <div class="proName"> <%# Eval ("PName") %> </div>
+                  <div class="probrand"> <%# Eval ("PName") %> </div>
+                  <div class="proName"><%# Eval ("BrandName") %>  </div>
                    <div class="proPrice"> <span class="proOgPrice" > <%# Eval ("PPrice","{0:0,00}") %> </span> <%# Eval ("PSelPrice","{0:c}") %> <span class="proPriceDiscount"> (<%# Eval("DiscAmount","{0:0,00}") %> off) </span></div> 
                    
               </div>
