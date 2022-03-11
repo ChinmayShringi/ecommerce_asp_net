@@ -14,7 +14,7 @@
                <asp:Label ID="Label1" runat="server" CssClass ="col-md-2 control-label" Text="Proudct Name"></asp:Label>
                <div class ="col-md-3">
                    <asp:TextBox ID="txtProductName" CssClass ="form-control" runat="server"></asp:TextBox>
-                      <asp:RequiredFieldValidator ID="txtProductNameRequiredFieldValidator1" runat="server" ErrorMessage="ProductName cannot be blank" ControlToValidate="txtProductName" ForeColor="Red"></asp:RequiredFieldValidator>  
+                      <asp:RequiredFieldValidator SetFocusOnError="true" ID="txtParoaductNameRequiredFieldValidator1" runat="server" ErrorMessage="ProductName cannot be blank" ControlToValidate="txtProductName" ForeColor="Red"></asp:RequiredFieldValidator>  
            <br />  
 
 
@@ -25,7 +25,7 @@
                <asp:Label ID="Label2" runat="server" CssClass ="col-md-2 control-label" Text="Price"></asp:Label>
                <div class ="col-md-3">
                    <asp:TextBox ID="txtPrice" CssClass ="form-control" runat="server"></asp:TextBox>
-                      <asp:RequiredFieldValidator ID="txtPriceRequiredFieldValidator1" runat="server" ErrorMessage="Price cannot be blank" ControlToValidate="txtPrice" ForeColor="Red"></asp:RequiredFieldValidator>  
+                      <asp:RequiredFieldValidator SetFocusOnError="true" ID="txtPriceRequiredFieldValidator1" runat="server" ErrorMessage="Price cannot be blank" ControlToValidate="txtPrice" ForeColor="Red"></asp:RequiredFieldValidator>  
            <br />  
                </div>
            </div>
@@ -35,7 +35,7 @@
                <asp:Label ID="Label3" runat="server" CssClass ="col-md-2 control-label" Text="SellingPrice"></asp:Label>
                <div class ="col-md-3">
                    <asp:TextBox ID="txtsellPrice" CssClass ="form-control" runat="server"></asp:TextBox>
-                      <asp:RequiredFieldValidator ID="txtsellPriceRequiredFieldValidator1" runat="server" ErrorMessage="sellPrice cannot be blank" ControlToValidate="txtsellPrice" ForeColor="Red"></asp:RequiredFieldValidator>  
+                      <asp:RequiredFieldValidator SetFocusOnError="true" ID="txtsellPriceRequiredFieldValidator1" runat="server" ErrorMessage="sellPrice cannot be blank" ControlToValidate="txtsellPrice" ForeColor="Red"></asp:RequiredFieldValidator>  
            <br />  
                </div>
            </div>
@@ -83,7 +83,7 @@
                <asp:Label ID="Label20" runat="server" CssClass ="col-md-2 control-label" Text="Quantity"></asp:Label>
                <div class ="col-md-3">
                    <asp:TextBox ID="txtQuantity" CssClass ="form-control" runat="server"></asp:TextBox>
-                      <asp:RequiredFieldValidator ID="txtQuantityRequiredFieldValidator1" runat="server" ErrorMessage="Quantity cannot be blank" ControlToValidate="txtQuantity" ForeColor="Red"></asp:RequiredFieldValidator>  
+                      <asp:RequiredFieldValidator SetFocusOnError="true" ID="txtQuantityRequiredFieldValidator1" runat="server" ErrorMessage="Quantity cannot be blank" ControlToValidate="txtQuantity" ForeColor="Red"></asp:RequiredFieldValidator>  
            <br />  
                </div>
            </div>
@@ -92,7 +92,7 @@
                <asp:Label ID="Label8" runat="server" CssClass ="col-md-2 control-label" Text="Description"></asp:Label>
                <div class ="col-md-3">
                    <asp:TextBox ID="txtDescription" TextMode ="MultiLine"  CssClass ="form-control" runat="server"></asp:TextBox>
-                      <asp:RequiredFieldValidator ID="txtDescriptionRequiredFieldValidator1" runat="server" ErrorMessage="Description cannot be blank" ControlToValidate="txtDescription" ForeColor="Red"></asp:RequiredFieldValidator>  
+                      <asp:RequiredFieldValidator SetFocusOnError="true" ID="txtDescriptionRequiredFieldValidator1" runat="server" ErrorMessage="Description cannot be blank" ControlToValidate="txtDescription" ForeColor="Red"></asp:RequiredFieldValidator>  
            <br />  
                </div>
            </div>
@@ -102,7 +102,7 @@
                <asp:Label ID="Label9" runat="server" CssClass ="col-md-2 control-label" Text="Product Details"></asp:Label>
                <div class ="col-md-3">
                    <asp:TextBox ID="txtPDetail" TextMode ="MultiLine" CssClass ="form-control" runat="server"></asp:TextBox>
-                      <asp:RequiredFieldValidator ID="txtPDetailRequiredFieldValidator1" runat="server" ErrorMessage="PDetail cannot be blank" ControlToValidate="txtPDetail" ForeColor="Red"></asp:RequiredFieldValidator>  
+                      <asp:RequiredFieldValidator SetFocusOnError="true" ID="txtPDetailRequiredFieldValidator1" runat="server" ErrorMessage="PDetail cannot be blank" ControlToValidate="txtPDetail" ForeColor="Red"></asp:RequiredFieldValidator>  
            <br />  
                </div>
            </div>
@@ -112,7 +112,7 @@
                <asp:Label ID="Label10" runat="server" CssClass ="col-md-2 control-label" Text="Materials and Care"></asp:Label>
                <div class ="col-md-3">
                    <asp:TextBox ID="txtMatCare" TextMode ="MultiLine" CssClass ="form-control" runat="server"></asp:TextBox>
-                      <asp:RequiredFieldValidator ID="txtMatCareRequiredFieldValidator1" runat="server" ErrorMessage="MatCare cannot be blank" ControlToValidate="txtMatCare" ForeColor="Red"></asp:RequiredFieldValidator>  
+                      <asp:RequiredFieldValidator SetFocusOnError="true" ID="txtMatCareRequiredFieldValidator1" runat="server" ErrorMessage="MatCare cannot be blank" ControlToValidate="txtMatCare" ForeColor="Red"></asp:RequiredFieldValidator>  
            <br />  
                </div>
            </div>
