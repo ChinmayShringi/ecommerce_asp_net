@@ -286,9 +286,9 @@ private void MsgBox(string sMessage)
                 cmd7.Parameters.AddWithValue("@Extention", Extention);
                 cmd7.ExecuteNonQuery();
 
+            }
                 BindGridview1();
                 Response.Redirect("AddProduct.aspx");
-            }
 
         }
 

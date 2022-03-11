@@ -120,28 +120,28 @@
             <div class ="form-group">
                <asp:Label ID="Label11" runat="server" CssClass ="col-md-2 control-label" Text="Upload Image"></asp:Label>
                <div class ="col-md-3">
-                   <asp:FileUpload ID="fuImg01" CssClass ="form-control" runat="server" />
+                   <asp:FileUpload accept=".png,.jpg,.jpeg" ID="fuImg01" CssClass ="form-control" runat="server" />
                </div>
            </div>
 
            <div class ="form-group">
                <asp:Label ID="Label12" runat="server" CssClass ="col-md-2 control-label" Text="Upload Image"></asp:Label>
                <div class ="col-md-3">
-                   <asp:FileUpload ID="fuImg02" CssClass ="form-control" runat="server" />
+                   <asp:FileUpload accept=".png,.jpg,.jpeg" ID="fuImg02" CssClass ="form-control" runat="server" />
                </div>
            </div>
 
            <div class ="form-group">
                <asp:Label ID="Label13" runat="server" CssClass ="col-md-2 control-label" Text="Upload Image"></asp:Label>
                <div class ="col-md-3">
-                   <asp:FileUpload ID="fuImg03" CssClass ="form-control" runat="server" />
+                   <asp:FileUpload accept=".png,.jpg,.jpeg" ID="fuImg03" CssClass ="form-control" runat="server" />
                </div>
            </div>
 
            <div class ="form-group">
                <asp:Label ID="Label14" runat="server" CssClass ="col-md-2 control-label" Text="Upload Image"></asp:Label>
                <div class ="col-md-3">
-                   <asp:FileUpload ID="fuImg04" CssClass ="form-control" runat="server" />
+                   <asp:FileUpload accept=".png,.jpg,.jpeg" ID="fuImg04" CssClass ="form-control" runat="server" />
                </div>
            </div>
 
@@ -150,7 +150,7 @@
             <div class ="form-group">
                <asp:Label ID="Label15" runat="server" CssClass ="col-md-2 control-label" Text="Upload Image"></asp:Label>
                <div class ="col-md-3">
-                   <asp:FileUpload ID="fuImg05" CssClass ="form-control" runat="server" />
+                   <asp:FileUpload accept=".png,.jpg,.jpeg" ID="fuImg05" CssClass ="form-control" runat="server" />
                </div>
            </div>
 
