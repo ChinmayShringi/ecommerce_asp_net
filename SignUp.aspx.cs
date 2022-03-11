@@ -12,25 +12,23 @@ using System.Configuration;
 
 public partial class SignUp : System.Web.UI.Page
 {
-       public static String flagOtp= "";
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if(!IsPostBack)
+{}
     }
 
     protected void txtsignup_Click(object sender, EventArgs e)
     {
 
-            Session["otp"]="asd";
        if(isformvalid())
         {
-// if(checkOtp()){
+if(checkOtp()){
             using (SqlConnection con = new SqlConnection(ConfigurationManager .ConnectionStrings ["MyShoppingDB"].ConnectionString ))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("Insert into tblUsers(Username,Password,Email,Name,Usertype) Values('" + txtUname.Text + "','" + txtPass.Text + "','" + txtEmail.Text + "','" + txtName.Text + "','User')", con);
                 cmd.ExecuteNonQuery();
-
                 Response.Write("<script> alert('Registration Successfully done');  </script>");
                 clr();
                 con.Close();
@@ -39,7 +37,7 @@ public partial class SignUp : System.Web.UI.Page
                 
             }
             Response.Redirect("~/SignIn.aspx");
-        // }
+        }
         }
        else
         {
@@ -50,9 +48,9 @@ public partial class SignUp : System.Web.UI.Page
     }
 
     private bool checkOtp() {
-        if(txtOtp.Text==flagOtp)
+        if(txtOtp.Text==Session["otp"])
         {
-            Response.Write("<script> alert('OTP not valid');  </script>");
+            Response.Write("<script> alert('OTP not valid"+Session["otp"]+"');  </script>");
             txtOtp.Focus();
             return false;
         }
@@ -84,6 +82,7 @@ public partial class SignUp : System.Web.UI.Page
                     } while (otp.IndexOf(finaldigit) != -1);
                     otp += finaldigit;
                 }
+            Session["otp"]=otp;
                 String ToEmailAddress = txtEmail.Text;
                 String EmailBody ="Hi ,"+txtUname.Text + ",<br/><br/>Use the one time password to login:<br/> <br/> Your One time password:"+otp ;
                 MailMessage PassRecMail = new MailMessage("fakeairhead@gmail.com", ToEmailAddress );
@@ -100,7 +99,7 @@ public partial class SignUp : System.Web.UI.Page
                     client.DeliveryMethod = SmtpDeliveryMethod.Network;
                     client.Send(PassRecMail);
                 }
-       flagOtp = otp;
+
        
     }
    

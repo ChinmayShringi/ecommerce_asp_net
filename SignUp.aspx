@@ -83,13 +83,13 @@
             <div class="col-xs-11">
             <asp:TextBox ID="txtEmail" runat="server" Class="form-control" placeholder="Enter Your Email"></asp:TextBox>
             </div>
-            <!-- <div class="col-xs-11 mt-5">
-                <asp:Button Class="btn btn-success" runat="server" Text="Send OTP" OnClick="sendOtp" />
+            <div class="col-xs-11 mt-5">
+                <asp:Button Class="btn btn-success" AutoPostback = false runat="server" Text="Send OTP" OnClick="sendOtp" />
            </div>
             <label class="col-xs-11 mt-5">Enter Otp:</label>
             <div class="col-xs-11">
                 <asp:TextBox ID="txtOtp" runat="server" Class="form-control" placeholder="Enter Your Otp"></asp:TextBox>
-                </div> -->
+                </div>
              <div class="col-xs-11 mt-5">
                  <asp:Button ID="txtsignup" Class="btn btn-success" runat="server" Text="SignUP" OnClick="txtsignup_Click" />
             &nbsp;<asp:Label ID="lblMsg" runat="server" ></asp:Label>
