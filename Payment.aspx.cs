@@ -154,6 +154,8 @@ public partial class Payment : System.Web.UI.Page
                 }
                 Int64 PurchaseID = Convert.ToInt64(cmd.ExecuteScalar());
             }
+            Response.Redirect("OrderPlaced.aspx");
+
         }
         else
         {
@@ -302,6 +304,8 @@ public partial class Payment : System.Web.UI.Page
                 Int64 OrderID = Convert.ToInt64(cmd.ExecuteScalar());
                 InsertOrderProducts();
             }
+            Response.Redirect("OrderPlaced.aspx");
+
         }
         else
         {
@@ -331,7 +335,7 @@ public partial class Payment : System.Web.UI.Page
                 Int64 OrderProID = Convert.ToInt64(myCmd.ExecuteScalar());
                 con.Close();
                 EmptyCart();
-                Response.Redirect("Success.aspx");
+                Response.Redirect("OrderPlaced.aspx");
             }
         }
     }

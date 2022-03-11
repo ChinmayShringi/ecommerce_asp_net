@@ -131,7 +131,7 @@
                                                             <div class="input-group">
                                                                 <input type="tel" class="form-control" name="cardNumber"
                                                                     placeholder="Valid Card Number"
-                                                                    autocomplete="cc-number" required autofocus />
+                                                                    autocomplete="cc-number" />
                                                                 <span class="input-group-addon"><i
                                                                         class="fa fa-credit-card"></i></span>
                                                             </div>
@@ -145,14 +145,14 @@
                                                                     class="hidden-xs">EXPIRATION</span><span
                                                                     class="visible-xs-inline">EXP</span> DATE</label>
                                                             <input type="tel" class="form-control" name="cardExpiry"
-                                                                placeholder="MM / YY" autocomplete="cc-exp" required />
+                                                                placeholder="MM / YY"   />
                                                         </div>
                                                     </div>
                                                     <div class="col-xs-5 col-md-5 pull-right">
                                                         <div class="form-group">
                                                             <label for="cardCVC">CV CODE</label>
                                                             <input type="tel" class="form-control" name="cardCVC"
-                                                                placeholder="CVC" autocomplete="cc-csc" required />
+                                                                placeholder="CVC"   />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -166,8 +166,11 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xs-12">
-                                                        <button class="subscribe btn btn-success btn-lg btn-block"
-                                                            type="button">Start Subscription</button>
+                                                        <asp:Button ID="BtnPlaceNPay12"
+                                                            CssClass="subscribe btn btn-success btn-lg btn-block"
+                                                            Font-Size="Large" ValidationGroup="PaymentPage"
+                                                            runat="server" OnClick="BtnPlaceNPay_Click"
+                                                            Text="Place Order" />
                                                     </div>
                                                 </div>
                                                 <div class="row" style="display:none;">
@@ -198,29 +201,32 @@
                     <div id="cod" class="tab-pane fade">
                         <h3>Cash on delivery</h3>
                         <h3>Pay easily with cash! Order Away!</h3>
-                    </div>
-                </div>
-                <div class="tab-content">
-                    <div id="PlaceNPay" class="tab-pane fade in active">
-                        <p>Place your order and Pay using our <a href="acceptedpayments" target="_blank">Accepted
-                                Payments</a> channels, Your order will be dispatched upon receiving full payment.</p>
-                        <asp:Button ID="BtnPlaceNPay" CssClass=" btn btn-info" Font-Size="Large"
-                            ValidationGroup="PaymentPage" runat="server" OnClick="BtnPlaceNPay_Click"
-                            Text="Checkout &raquo;" />
-                    </div>
-                    <div id="EasyPaisa" class="tab-pane fade">
-                        <h3 class="center1">EasyPaisa Payment Gateway Coming Soon</h3>
-                        <h4 class="center1">Until that you can send amount @ 0311 0000193</h4>
-                        <!--  <asp:Button ID="btnEasyPaisa" CssClass=" btn btn-success" Font-Size="Large" runat="server" Text="Pay with EasyPaisa &raquo;" /> -->
-                    </div>
-                    <div id="JazzCash" class="tab-pane fade">
-                        <h3 class="center1">JazzCash Payment Gateway Coming Soon</h3>
-                        <h4 class="center1">Until that you can send amount @ 0300 1888193</h4>
-                        <!-- <asp:Button ID="btnJazzCash" CssClass="btn btn-danger" runat="server" Font-Size="Large" Text="Pay with JazzCash &raquo;" /> -->
-                    </div>
-                    <div id="Div1" class="tab-pane fade">
-                        <h3 class="center1">Cash on Delivery - Coming Soon</h3>
-                        <!-- <asp:Button ID="btnCOD" CssClass="btn btn-primary" runat="server" Text="CheckOut &raquo;" Font-Size="Large" /> -->
+
+                        <div class="tab-content">
+                            <div id="PlaceNPay" class="tab-pane fade in active">
+                                <p>Place your order and Pay using our <a 
+                                        target="_blank">Accepted
+                                        Payments</a> channels, Your order will be dispatched upon receiving full
+                                    payment.</p>
+                                <asp:Button ID="BtnPlaceNPay" CssClass=" btn btn-info" Font-Size="Large"
+                                    ValidationGroup="PaymentPage" runat="server" OnClick="BtnPlaceNPay_Click"
+                                    Text="Checkout &raquo;" />
+                            </div>
+                            <div id="EasyPaisa" class="tab-pane fade">
+                                <h3 class="center1">EasyPaisa Payment Gateway Coming Soon</h3>
+                                <h4 class="center1">Until that you can send amount @ 0311 0000193</h4>
+                                <!--  <asp:Button ID="btnEasyPaisa" CssClass=" btn btn-success" Font-Size="Large" runat="server" Text="Pay with EasyPaisa &raquo;" /> -->
+                            </div>
+                            <div id="JazzCash" class="tab-pane fade">
+                                <h3 class="center1">JazzCash Payment Gateway Coming Soon</h3>
+                                <h4 class="center1">Until that you can send amount @ 0300 1888193</h4>
+                                <!-- <asp:Button ID="btnJazzCash" CssClass="btn btn-danger" runat="server" Font-Size="Large" Text="Pay with JazzCash &raquo;" /> -->
+                            </div>
+                            <div id="Div1" class="tab-pane fade">
+                                <h3 class="center1">Cash on Delivery - Coming Soon</h3>
+                                <!-- <asp:Button ID="btnCOD" CssClass="btn btn-primary" runat="server" Text="CheckOut &raquo;" Font-Size="Large" /> -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
