@@ -39,14 +39,9 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-
 <br />
-
 <div class="jumbotron text-center">
   <h1>Order Placed!</h1> 
   <asp:Button ID="btnLogin" CssClass ="btn btn-primary " runat="server" Text="Keep Shopping" OnClick="Button1_Click" />
-  <p></p> 
 </div>
-
 </asp:Content>
-
